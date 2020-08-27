@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
   return (
     <div className="App">
-      <h1>PlaceHolder</h1>
+      <Typography color="primary" variant="h1" component="h2">
+        h1. Heading
+      </Typography>
     </div>
   );
 }
