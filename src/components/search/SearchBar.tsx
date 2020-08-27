@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 const SearchBar = () => {
 
-    const [text, setText] = useState("")
+    const [text, setText] = useState<string>("")
     const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setText(event.target.value);
       };
