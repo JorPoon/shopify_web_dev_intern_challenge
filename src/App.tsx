@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import NavBar from './components/nav/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <h1>PlaceHolder</h1>
+      <NavBar/>
     </div>
   );
 }
