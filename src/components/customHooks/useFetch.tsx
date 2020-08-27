@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React , { useState, useEffect } from 'react'
 
 
 export default function useFetch(url: string) {
@@ -17,7 +17,7 @@ export default function useFetch(url: string) {
 
                 setResponse(json);
                 setIsLoading(false)
-                
+
             } catch (error) {
                 setError(error)
             }   

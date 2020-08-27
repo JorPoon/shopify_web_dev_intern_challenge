@@ -1,8 +1,11 @@
 import React from 'react';
 import NavBar from './components/nav/NavBar'
 import SearchBar from './components/search/SearchBar'
+import useFetch from './components/customHooks/useFetch'
 
 function App() {
+  const movieData = useFetch("http://www.omdbapi.com/?i=tt3896198&apikey=4f660c34")
+  console.log(movieData)
   return (
     <div className="App">
       <NavBar/>
