@@ -8,9 +8,9 @@ import ToolBar from '@material-ui/core/Toolbar';
     return (
         <AppBar position="static">
             <ToolBar>
-            <Typography variant="h6" color="secondary">
-                The Shoppies
-            </Typography>
+                <Typography variant="h6" color="secondary">
+                    The Shoppies
+                </Typography>
             </ToolBar>
         </AppBar>
     )
