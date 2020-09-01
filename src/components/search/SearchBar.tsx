@@ -15,7 +15,7 @@ const SearchBar = (props:Search) => {
       };
 
     return (
-        <div>
+        <>
             <form noValidate autoComplete="on">
                 <TextField
                     id="movie"
@@ -27,7 +27,7 @@ const SearchBar = (props:Search) => {
                     <SearchIcon />
                 </IconButton>   
             </form>
-        </div>
+        </>
     )
 };
 

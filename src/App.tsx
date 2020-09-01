@@ -16,7 +16,18 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+      {/* Grid Container */}
+      {/* Grid Item */}
       <SearchBar search={search}/>
+      {/* Grid Item */}
+      {/* Grid Item */}
+      {/* MovieList */}
+      {/* Grid Item */}
+      {/* Grid Item */}
+      {/* NominationList */}
+      {/* Grid Item */}
+      {/* Grid Container */}
+      
     </div>
   );
 }

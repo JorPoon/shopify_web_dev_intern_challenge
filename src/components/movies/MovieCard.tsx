@@ -19,7 +19,8 @@ const MovieCard = (props:Movie) => {
                 {/* <CardMedia/> */}
                 <CardContent>
                     <Typography>
-                        {props.title}
+                        {/* {props.title} */}
+                        Movie Title
                     </Typography>
                 </CardContent>
             </CardActionArea>
