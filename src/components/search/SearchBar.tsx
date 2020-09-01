@@ -3,7 +3,11 @@ import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 
-const SearchBar = () => {
+interface Search {
+    search: Function
+}
+
+const SearchBar = (props:Search) => {
 
     const [text, setText] = useState<string>("")
     const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,7 +15,7 @@ const SearchBar = () => {
       };
 
     return (
-        <div>
+        <>
             <form noValidate autoComplete="on">
                 <TextField
                     id="movie"
@@ -23,7 +27,7 @@ const SearchBar = () => {
                     <SearchIcon />
                 </IconButton>   
             </form>
-        </div>
+        </>
     )
 };
 
