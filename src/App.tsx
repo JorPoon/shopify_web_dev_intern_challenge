@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
+
+//Custom Components
 import NavBar from './components/nav/NavBar'
 import SearchBar from './components/search/SearchBar'
 import useFetch from './components/customHooks/useFetch'
+
+//Material UI
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   const [data, setData] = useState<string>('')
@@ -16,17 +21,17 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      {/* Grid Container */}
-      {/* Grid Item */}
-      <SearchBar search={search}/>
-      {/* Grid Item */}
+      <Grid container>
+        <Grid item>
+          <SearchBar search={search}/>
+        </Grid>
       {/* Grid Item */}
       {/* MovieList */}
       {/* Grid Item */}
       {/* Grid Item */}
       {/* NominationList */}
       {/* Grid Item */}
-      {/* Grid Container */}
+      </Grid>
       
     </div>
   );
