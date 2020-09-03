@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
+import Paper from '@material-ui/core/Paper';
+
 
 interface Search {
     search: Function
