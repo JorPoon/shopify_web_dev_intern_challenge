@@ -5,20 +5,24 @@ import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 
 
-interface Search {
+interface SearchProps {
     search: Function
 }
 
-const SearchBar = (props:Search) => {
+const SearchBar = (props:SearchProps) => {
 
     const [text, setText] = useState<string>("")
-    const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setText(event.target.value);
       };
+    const handleSearch = (event: React.FormEvent<HTMLFormElement>): void => {
+        event.preventDefault()
+       props.search(text)
+    }
 
     return (
         <>
-            <form noValidate autoComplete="on">
+            <form noValidate autoComplete="on" onSubmit={handleSearch}>
                 <TextField
                     id="movie"
                     label="Movie"

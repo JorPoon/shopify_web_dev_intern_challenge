@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 
 interface Movie {
     title: string,
-    year: number
+    year: string
 }
 
 const MovieCard = (props:Movie) => {
@@ -19,8 +19,7 @@ const MovieCard = (props:Movie) => {
                 {/* <CardMedia/> */}
                 <CardContent>
                     <Typography>
-                        {/* {props.title} */}
-                        Movie Title
+                        {props.title}
                     </Typography>
                 </CardContent>
             </CardActionArea>
