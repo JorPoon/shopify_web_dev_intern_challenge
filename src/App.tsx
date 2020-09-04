@@ -7,6 +7,10 @@ import useFetch from './components/customHooks/useFetch'
 
 //Material UI
 import Grid from '@material-ui/core/Grid';
+import MovieCard from './components/movies/MovieCard';
+
+//Style
+import useAppStyle from './styles/AppStyle.jsx'
 
 function App() {
   const [data, setData] = useState<string>('')
@@ -17,13 +21,20 @@ function App() {
 
   const movieData = useFetch(`http://www.omdbapi.com/?t=${data}&apikey=4f660c34`)
 
+  const classes = useAppStyle()
   
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar/>
-      <Grid container>
-        <Grid item>
+      <Grid container alignItems='center' justify='center' spacing={3}>
+        <Grid item xs={12} className={classes.text}>
           <SearchBar search={search}/>
+        </Grid>
+        <Grid item xs={6} >
+          <MovieCard title='hello' year={1992}/>
+        </Grid>
+        <Grid item xs={6}>
+          <MovieCard title='world' year={1992}/>
         </Grid>
       {/* Grid Item */}
       {/* MovieList */}
