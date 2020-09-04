@@ -15,6 +15,10 @@ const useCardStyle = makeStyles({
       width: '300px',
       margin: '10px 0'
     },
+    media: {
+        paddingTop: '56.25%',
+        height: '450px'
+    }
   });
   
 
@@ -22,16 +26,20 @@ const useCardStyle = makeStyles({
 interface Movie {
     title: string,
     year: string,
-    key: string
+    key: string,
+    poster: string
 }
 
 const MovieCard = (props:Movie) => {
     const classes = useCardStyle()
-
+    console.log(props.poster)
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                {/* <CardMedia/> */}
+                {/* <CardMedia
+                    className={classes.media}
+                    image={props.poster}
+                /> */}
                 <CardContent>
                     <Typography variant='h5' align='center'>
                         {props.title}
