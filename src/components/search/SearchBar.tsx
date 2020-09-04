@@ -25,7 +25,7 @@ const SearchBar = (props:SearchProps) => {
             <form noValidate autoComplete="on" onSubmit={handleSearch}>
                 <TextField
                     id="movie"
-                    label="Movie"
+                    label=" Search Movie"
                     value={text}
                     onChange={handleTextChange}
                 /> 

@@ -14,7 +14,7 @@ import MovieCard from './components/movies/MovieCard';
 import useAppStyle from './styles/AppStyle.jsx'
 
 function App() {
-  const [data, setData] = useState<string>('Batman')
+  const [data, setData] = useState<string>('')
   const [response, setResponse] = useState<string>('')
 
 
@@ -23,28 +23,18 @@ function App() {
   }
 
   const movieData = useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
-  // useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
   
   const classes = useAppStyle()
   
-  console.log(movieData)
-
-  // useEffect(() => {
-    
-  //   if(movieData.response) {
-  //     setResponse(movieData.response.Error)
-  //   }
-  // }, [])
-
   return (
     <div className='App'>
       <NavBar/>
-      <Grid container alignItems='center' justify='center' spacing={3}>
+      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
         <Grid item xs={12} className={classes.text}>
           <SearchBar search={search}/>
         </Grid>
-        <Grid item xs={6} >
-        <MovieView movieList={movieData}/>
+        <Grid container item xs={6} direction='column' spacing={10} alignItems='center' justify='center'  >
+          <MovieView movieList={movieData}/>
         </Grid>
         <Grid item xs={6}>
           {/* <MovieCard title='world' year={1992}/> */}
