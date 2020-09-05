@@ -53,9 +53,6 @@ const MovieCard = (props:Movie) => {
                 <Button size='small' color='primary'>
                    Nominate
                 </Button>
-                {/* <Button size="small" color="primary">
-                    Learn More
-                </Button> */}
             </CardActions>
         </Card>
     )

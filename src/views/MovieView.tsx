@@ -19,13 +19,16 @@ const MovieView = (props: MovieProps) => {
         }
     }, [props.movieList])
 
-    console.log(props.movieList)
-
     return (
         <>
             {(movie &&  props.movieList.response.Search.map((movie: any) => {
                 return (
-                    <MovieCard title={movie.Title} year={movie.Year} key={movie.imdbID} poster={movie.Poster}/>
+                    <MovieCard 
+                        title={movie.Title} 
+                        year={movie.Year} 
+                        key={movie.imdbID} 
+                        poster={movie.Poster}
+                        />
                 )
             })) || <Typography variant='h5'>Please Search A Movie</Typography>} 
         </>
