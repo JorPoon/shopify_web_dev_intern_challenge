@@ -19,7 +19,7 @@ const MovieView = (props: MovieProps) => {
            }
         }
     }, [props.movieList])
-
+    
     return (
         <>
             {(movie &&  props.movieList.response.Search.map((movie: any) => {
@@ -29,10 +29,11 @@ const MovieView = (props: MovieProps) => {
                         year={movie.Year} 
                         key={movie.imdbID} 
                         poster={movie.Poster}
-                        nominate={movie.nominate}
+                        nominate={props.nominate}
                         />
                 )
-            })) || <Typography variant='h5'>Please Search A Movie</Typography>} 
+            }))} 
+            {/* || <Typography variant='h5'>Please Search A Movie</Typography>}  */}
         </>
     )
 }

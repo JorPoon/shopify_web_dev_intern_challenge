@@ -37,23 +37,31 @@ function App() {
   const classes = useAppStyle()
   
   return (
-    <div className='App'>
-      <NavBar/>
+    <div className='App'> 
       <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
         <Grid item xs={12} className={classes.text}>
+          <NavBar/>
           <SearchBar search={search}/>
         </Grid>
-        <Grid container item xs={6} direction='column' spacing={10} alignItems='center' justify='center'  >
-          <Typography variant='h3'>
+        <Grid item xs={6} className={classes.text} >
+          <Typography variant='h4'>
             Movie List
           </Typography>
-          <MovieView movieList={movieData} nominate={nominate}/>
         </Grid>
-        <Grid item xs={6}>
-          <NominationView/>
+        <Grid item xs={6} className={classes.text} >
+          <Typography variant='h4'>
+            Nominate List
+          </Typography>
         </Grid>
       </Grid>
-      
+      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
+        <Grid container item xs={6} direction='column' alignItems='center' justify='center'  >
+          <MovieView movieList={movieData} nominate={nominate}/>
+        </Grid>
+        <Grid container item xs={6} direction='column' alignItems='center'   >
+          {/* <MovieView movieList={movieData} nominate={nominate}/> */}
+        </Grid>
+      </Grid>
     </div>
   );
 }
