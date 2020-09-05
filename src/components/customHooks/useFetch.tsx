@@ -3,7 +3,7 @@ import React , { useState, useEffect, useRef } from 'react'
 
 export default function useFetch(url: string) {
 
-    const [response, setResponse] = useState<any>(null)
+    const [response, setResponse] = useState<any>()
     const[error, setError] = useState<any>(null)
     const [isLoading, setIsLoading] =useState<boolean>(false)
     const cache = useRef<any>({})
