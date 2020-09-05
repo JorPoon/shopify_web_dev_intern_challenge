@@ -27,12 +27,17 @@ interface Movie {
     title: string,
     year: string,
     key: string,
-    poster: string
+    poster: string,
+    nominate: any
 }
 
 const MovieCard = (props:Movie) => {
     const classes = useCardStyle()
-    console.log(props.poster)
+
+    const nominateMovie = (event: React.MouseEvent<HTMLButtonElement>): void => {
+        props.nominate(props.title)
+    }
+
     return (
         <Card className={classes.root}>
             <CardActionArea>
@@ -50,7 +55,7 @@ const MovieCard = (props:Movie) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size='small' color='primary'>
+                <Button size='small' color='primary' onClick={(event) => nominateMovie(event)}>
                    Nominate
                 </Button>
             </CardActions>

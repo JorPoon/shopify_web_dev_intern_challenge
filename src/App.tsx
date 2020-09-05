@@ -17,11 +17,19 @@ import useAppStyle from './styles/AppStyle.jsx'
 
 function App() {
   const [data, setData] = useState<string>('')
-  const [response, setResponse] = useState<string>('')
+  const [nominated, setNominated] = useState<any>([])
 
 
   const search = (searchValue:string) => {
     setData(searchValue)
+  }
+
+  const nominate = (nominateValue:any) => {
+    // const nominatedArray = [...nominated]
+    // nominatedArray.push(nominateValue)
+
+    // setNominated(nominatedArray)
+    console.log(nominateValue)
   }
 
   const movieData = useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
@@ -39,10 +47,9 @@ function App() {
           <Typography variant='h3'>
             Movie List
           </Typography>
-          <MovieView movieList={movieData}/>
+          <MovieView movieList={movieData} nominate={nominate}/>
         </Grid>
         <Grid item xs={6}>
-          {/* <MovieCard title='world' year={1992}/> */}
           <NominationView/>
         </Grid>
       </Grid>

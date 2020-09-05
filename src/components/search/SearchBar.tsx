@@ -17,7 +17,7 @@ const SearchBar = (props:SearchProps) => {
       };
     const handleSearch = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
-       props.search(text)
+        props.search(text)
     }
 
     return (

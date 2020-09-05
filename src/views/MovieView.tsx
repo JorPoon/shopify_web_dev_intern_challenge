@@ -3,7 +3,8 @@ import MovieCard from '../components/movies/MovieCard'
 import Typography from '@material-ui/core/Typography'
 
 interface MovieProps {
-    movieList: any
+    movieList: any,
+    nominate: Function
 }
 
 
@@ -28,6 +29,7 @@ const MovieView = (props: MovieProps) => {
                         year={movie.Year} 
                         key={movie.imdbID} 
                         poster={movie.Poster}
+                        nominate={movie.nominate}
                         />
                 )
             })) || <Typography variant='h5'>Please Search A Movie</Typography>} 
