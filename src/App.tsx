@@ -19,7 +19,7 @@ function App() {
   const [data, setData] = useState<string>('')
   const [nominated, setNominated] = useState<any>([])
   
-  const movieData = useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
+  const movieData = useFetch(`https://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
 
   const search = (searchValue:string) => {
     setData(searchValue)
