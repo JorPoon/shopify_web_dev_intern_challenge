@@ -9,7 +9,7 @@ const useAppStyle = makeStyles({
     textAlign: 'center'
   },
   nom: {
-    maxHeight: '100%'
+    height: '1772px'
   }
 });
 

@@ -4,25 +4,29 @@ import Typography from '@material-ui/core/Typography'
 
 interface MovieProps {
     movieList: any,
-    nominate: Function
+    nominate: Function,
+    nominatedList: any
 }
 
 
 
 const MovieView = (props: MovieProps) => {
-    const [movie, setMovie] = useState(false) 
+    const [isLoading, setIsLoading] = useState(false) 
+    const [movies, setMovies] = useState([])
+
 
     useEffect(() => {
         if(props.movieList.response) {
            if(props.movieList.response.Search) {
-               setMovie(true)
+               setIsLoading(true)
+               setMovies(props.movieList.response.Search)
            }
         }
     }, [props.movieList])
-    
+
     return (
         <>
-            {(movie &&  props.movieList.response.Search.map((movie: any) => {
+            {(isLoading &&  movies.map((movie: any) => {
                 return (
                     <MovieCard 
                         title={movie.Title} 
@@ -33,7 +37,6 @@ const MovieView = (props: MovieProps) => {
                         />
                 )
             }))} 
-            {/* || <Typography variant='h5'>Please Search A Movie</Typography>}  */}
         </>
     )
 }

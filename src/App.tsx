@@ -18,21 +18,27 @@ import useAppStyle from './styles/AppStyle.jsx'
 function App() {
   const [data, setData] = useState<string>('')
   const [nominated, setNominated] = useState<any>([])
-
+  
+  const movieData = useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
 
   const search = (searchValue:string) => {
     setData(searchValue)
   }
-
+  
   const nominate = (nominateValue:any) => {
-    // const nominatedArray = [...nominated]
-    // nominatedArray.push(nominateValue)
-
-    // setNominated(nominatedArray)
-    console.log(nominateValue)
+    const nominatedArray = [...nominated]
+    nominatedArray.push(nominateValue)
+    setNominated(nominatedArray)
   }
 
-  const movieData = useFetch(`http://www.omdbapi.com/?s=${data}&apikey=4f660c34`)
+  const remove = (removeMovie: any) => {
+    const removeNominate = nominated.filter((movie: any) => {
+      return movie.title !== removeMovie
+    })
+    setNominated(removeNominate)
+  }
+
+  
   
   const classes = useAppStyle()
   
@@ -54,12 +60,13 @@ function App() {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
-        <Grid container item xs={6} direction='column' alignItems='center' justify='center'  >
-          <MovieView movieList={movieData} nominate={nominate}/>
+   
+      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>    
+        <Grid container item xs={6} direction='column' alignItems='center' >
+          <MovieView movieList={movieData} nominate={nominate} nominatedList={nominated}/>
         </Grid>
-        <Grid container item xs={6} direction='column' alignItems='center'   >
-          {/* <MovieView movieList={movieData} nominate={nominate}/> */}
+        <Grid container item xs={6} direction='column' alignItems='center' className={classes.nom} >
+          <NominationView nominated={nominated} remove={remove}/>
         </Grid>
       </Grid>
     </div>
