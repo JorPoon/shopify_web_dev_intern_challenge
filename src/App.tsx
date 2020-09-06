@@ -63,7 +63,7 @@ function App() {
    
       <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>    
         <Grid container item xs={6} direction='column' alignItems='center' >
-          <MovieView movieList={movieData} nominate={nominate}/>
+          <MovieView movieList={movieData} nominate={nominate} nominatedList={nominated}/>
         </Grid>
         <Grid container item xs={6} direction='column' alignItems='center' className={classes.nom} >
           <NominationView nominated={nominated} remove={remove}/>

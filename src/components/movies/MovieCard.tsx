@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -33,14 +33,16 @@ interface Movie {
 
 const MovieCard = (props:Movie) => {
     const classes = useCardStyle()
+    const [isNominated, setIsNominated] = useState(false)
 
     const nominateMovie = (event: React.MouseEvent<HTMLButtonElement>): void => {
         //create an object for Movie data and pass it through props.nominate function
         const nominated = {
             title: props.title,
-            year: props.year
+            year: props.year,
+            nominated: true
         }
-
+        setIsNominated(true)
         props.nominate(nominated)
     }
 
@@ -61,9 +63,18 @@ const MovieCard = (props:Movie) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size='small' color='primary' onClick={(event) => nominateMovie(event)}>
-                   Nominate
-                </Button>
+                {/* {isNominated ? <Button disabled variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
+                                    Nominate
+                    </Button> : <Button variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
+                                    Nominate
+                                </Button>
+                } */}
+                {isNominated && <Button disabled variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
+                                    Nominate
+                                </Button> }
+                {!isNominated && <Button variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
+                                    Nominate
+                                </Button> }
             </CardActions>
         </Card>
     )

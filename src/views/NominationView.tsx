@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import NominateCard from '../components/movies/NominateCard'
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
+
 
 interface NominatedMovies {
     nominated: any,
@@ -16,14 +19,19 @@ const NominationView = (props:NominatedMovies) => {
 
     useEffect(() => {
         if(props.nominated.length >= 5) {
-            console.log(5)
             setBanner(true)
+        } else {
+            setBanner(false)
         }
     }, [props.nominated])
 
     return (
         <>
-            {banner && <p>hi</p>}
+            {banner && <Chip
+                        avatar={<Avatar>5</Avatar>}
+                        label="Nominations"
+                        color="secondary"
+                        />}
             {props.nominated.map((movie: any) => {  
                 const id = generateKey(movie.title)      
                 return (

@@ -53,7 +53,7 @@ const NominateCard = (props: NominateProps) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size='small' color='primary' onClick={(event) => removeNomination(event)}>
+                <Button variant='outlined' size='small' color='primary' onClick={(event) => removeNomination(event)}>
                    Remove
                 </Button>
             </CardActions>
