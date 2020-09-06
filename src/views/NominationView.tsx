@@ -10,9 +10,10 @@ const NominationView = (props:NominatedMovies) => {
     return (
         <>
             {props.nominated.map((movie: any) => {
-                console.log(movie.title)
+                const id = Date.now()
                 return (
                     <NominateCard 
+                        key={id}
                         title={movie.title} 
                         year={movie.year} 
                         />

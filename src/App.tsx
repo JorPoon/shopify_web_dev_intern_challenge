@@ -28,9 +28,7 @@ function App() {
   const nominate = (nominateValue:any) => {
     const nominatedArray = [...nominated]
     nominatedArray.push(nominateValue)
-
     setNominated(nominatedArray)
-    console.log(nominatedArray)
   }
 
   const remove = (removeMovie: any) => {
@@ -60,23 +58,13 @@ function App() {
         </Grid>
       </Grid>
    
-      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
-     
+      <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>    
         <Grid container item xs={6} direction='column' alignItems='center' >
           <MovieView movieList={movieData} nominate={nominate}/>
         </Grid>
         <Grid container item xs={6} direction='column' alignItems='center' className={classes.nom} >
           <NominationView nominated={nominated}/>
         </Grid>
-        
-        {/* <Grid container alignItems='center' justify='center' spacing={3} className={classes.root}>
-          <Grid container item xs={6} direction='column' alignItems='center'   >
-            <NominationView nominated={nominated}/>
-          </Grid>
-        </Grid> */}
-
-
-
       </Grid>
     </div>
   );
