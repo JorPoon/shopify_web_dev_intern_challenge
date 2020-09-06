@@ -11,7 +11,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useCardStyle = makeStyles({
     root: {
-    //   minWidth: '250px',
       width: '300px',
       margin: '10px 0'
     },

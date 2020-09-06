@@ -37,7 +37,6 @@ const MovieView = (props: MovieProps) => {
                         />
                 )
             }))} 
-            {/* || <Typography variant='h5'>Please Search A Movie</Typography>}  */}
         </>
     )
 }

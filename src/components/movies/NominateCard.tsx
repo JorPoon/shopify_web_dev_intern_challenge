@@ -11,7 +11,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useCardStyle = makeStyles({
     root: {
-    //   minWidth: '250px',
       width: '300px',
       margin: '10px 0'
     },
@@ -30,7 +29,6 @@ interface NominateProps {
 const NominateCard = (props: NominateProps) => {
 
     const removeNomination = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        //create an object for Movie data and pass it through props.remove movie function
         props.remove(props.title)
     }
     
@@ -39,10 +37,6 @@ const NominateCard = (props: NominateProps) => {
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                {/* <CardMedia
-                    className={classes.media}
-                    image={props.poster}
-                /> */}
                 <CardContent>
                     <Typography variant='h5' align='center'>
                         {props.title}
