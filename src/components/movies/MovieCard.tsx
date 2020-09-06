@@ -36,7 +36,12 @@ const MovieCard = (props:Movie) => {
 
     const nominateMovie = (event: React.MouseEvent<HTMLButtonElement>): void => {
         //create an object for Movie data and pass it through props.nominate function
-        props.nominate(props.title)
+        const nominated = {
+            title: props.title,
+            year: props.year
+        }
+
+        props.nominate(nominated)
     }
 
     return (
