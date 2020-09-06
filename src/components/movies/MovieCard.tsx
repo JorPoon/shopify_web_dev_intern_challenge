@@ -36,7 +36,6 @@ const MovieCard = (props:Movie) => {
     const [isNominated, setIsNominated] = useState(false)
 
     const nominateMovie = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        //create an object for Movie data and pass it through props.nominate function
         const nominated = {
             title: props.title,
             year: props.year,
@@ -49,10 +48,6 @@ const MovieCard = (props:Movie) => {
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                {/* <CardMedia
-                    className={classes.media}
-                    image={props.poster}
-                /> */}
                 <CardContent>
                     <Typography variant='h5' align='center'>
                         {props.title}
@@ -63,13 +58,7 @@ const MovieCard = (props:Movie) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                {/* {isNominated ? <Button disabled variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
-                                    Nominate
-                    </Button> : <Button variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
-                                    Nominate
-                                </Button>
-                } */}
-                {isNominated && <Button disabled variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
+                {isNominated && <Button disabled variant='contained' size='small' color='secondary' onClick={(event) => nominateMovie(event)}>
                                     Nominate
                                 </Button> }
                 {!isNominated && <Button variant='contained' size='small' color='primary' onClick={(event) => nominateMovie(event)}>
