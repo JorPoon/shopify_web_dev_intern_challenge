@@ -23,14 +23,15 @@ const useCardStyle = makeStyles({
 
 interface NominateProps {
     title: string,
-    year: string
+    year: string,
+    remove: Function
 }
 
 const NominateCard = (props: NominateProps) => {
 
     const removeNomination = (event: React.MouseEvent<HTMLButtonElement>): void => {
         //create an object for Movie data and pass it through props.remove movie function
-        console.log('implementing')
+        props.remove(props.title)
     }
     
     const classes = useCardStyle()

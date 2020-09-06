@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react'
 import NominateCard from '../components/movies/NominateCard'
 
 interface NominatedMovies {
-    nominated: any
+    nominated: any,
+    remove: Function
 }
 
 const NominationView = (props:NominatedMovies) => {
@@ -30,6 +31,7 @@ const NominationView = (props:NominatedMovies) => {
                         key={id}
                         title={movie.title} 
                         year={movie.year} 
+                        remove={props.remove}
                         />
                 )
             })}

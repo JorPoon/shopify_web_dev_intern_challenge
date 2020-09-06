@@ -32,7 +32,10 @@ function App() {
   }
 
   const remove = (removeMovie: any) => {
-    console.log(removeMovie)
+    const removeNominate = nominated.filter((movie: any) => {
+      return movie.title !== removeMovie
+    })
+    setNominated(removeNominate)
   }
 
   
@@ -63,7 +66,7 @@ function App() {
           <MovieView movieList={movieData} nominate={nominate}/>
         </Grid>
         <Grid container item xs={6} direction='column' alignItems='center' className={classes.nom} >
-          <NominationView nominated={nominated}/>
+          <NominationView nominated={nominated} remove={remove}/>
         </Grid>
       </Grid>
     </div>
