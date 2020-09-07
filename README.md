@@ -1,10 +1,10 @@
 
 
-# 1️⃣ Shopify Web Developer Intern Challenge
+# Shopify Web Developer Intern Challenge
 
-1️⃣ You can find the deployed project at [The Shoppies](https://shopify-challenge-2d357.web.app/).
+You can find the deployed project at [The Shoppies](https://shopify-challenge-2d357.web.app/).
 
-## 4️⃣ Contributors
+##  Contributors
 
 
 
@@ -25,7 +25,7 @@
 Shopify needs a webpage that can search OMDB for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
 
-### 4️⃣ Key Features
+###  Key Features
 
 -    Search movies using OMDB API
 -    Nominate searched movies
@@ -33,7 +33,7 @@ Shopify needs a webpage that can search OMDB for movies, and allow the user to s
 -    Banner pops up if 5 movies are nominated
 -
 
-## 1️⃣ Tech Stack
+##  Tech Stack
 
 ### Front end built using: React, Typescript, Material UI
 
@@ -48,22 +48,12 @@ Shopify needs a webpage that can search OMDB for movies, and allow the user to s
 
 #### [OMDB](http://www.omdbapi.com/)
 
-# 4️⃣ Testing
 
-🚫Document what you used for testing and why
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+At the root of this project, start the terminal then run yarn install and then yarn start 
 
-## Other Scripts
-
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
 
 # Contributing
 
