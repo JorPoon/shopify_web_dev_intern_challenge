@@ -7,18 +7,20 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import { makeStyles } from '@material-ui/core/styles';
+import useCardStyle from '../../styles/CardStyle'
 
-const useCardStyle = makeStyles({
-    root: {
-      width: '300px',
-      margin: '10px 0'
-    },
-    media: {
-        paddingTop: '56.25%',
-        height: '450px'
-    }
-  });
+// import { makeStyles } from '@material-ui/core/styles';
+
+// const useCardStyle = makeStyles({
+//     root: {
+//       width: '300px',
+//       margin: '10px 0'
+//     },
+//     media: {
+//         paddingTop: '56.25%',
+//         height: '450px'
+//     }
+//   });
   
 
 
