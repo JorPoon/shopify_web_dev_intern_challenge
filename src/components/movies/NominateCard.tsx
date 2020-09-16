@@ -14,7 +14,7 @@ import useCardStyle from '../../styles/CardStyle'
 interface NominateProps {
     title: string,
     year: string,
-    remove: Function
+    remove: (title:string) => void;
 }
 
 const NominateCard = (props: NominateProps) => {
