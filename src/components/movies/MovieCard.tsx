@@ -9,14 +9,18 @@ import Typography from '@material-ui/core/Typography';
 import useCardStyle from '../../styles/CardStyle'
 
   
-
+interface NominateProps {
+    title: string,
+    year: string,
+    nominated: boolean
+}
 
 interface Movie {
     title: string,
     year: string,
     key: string,
     poster: string,
-    nominate: any
+    nominate: (nominated: NominateProps) => void;
 }
 
 const MovieCard = (props:Movie) => {
